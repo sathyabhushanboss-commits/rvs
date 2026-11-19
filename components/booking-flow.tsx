@@ -124,11 +124,10 @@ function RouteMap({
         [BANGALORE_CENTER.lat, BANGALORE_CENTER.lng],
         11,
       );
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        subdomains: "abcd",
+      // Free OpenStreetMap tiles — no API key needed (CARTO now requires one).
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
-        detectRetina: true,
       }).addTo(map);
       L.control.zoom({ position: "bottomright" }).addTo(map);
       map.on("click", (e: Leaflet.LeafletMouseEvent) => onPickRef.current(e.latlng.lat, e.latlng.lng));
