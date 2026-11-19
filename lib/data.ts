@@ -9,7 +9,7 @@ export const COMPANY = {
   phoneDisplay: "+91 98802 91934",
   phone: "+919880291934",
   whatsapp: "919880291934",
-  email: "info@rvstoursandtravels.com", // ← replace with the client's real email
+  email: "bookings@rvstravels.in", // ← replace with the client's real email
   address: "Bengaluru, Karnataka, India",
   hours: "24 × 7, all 365 days",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.rvstoursandtravels.com",
