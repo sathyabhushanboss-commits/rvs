@@ -41,7 +41,7 @@ export const POLICY_LINKS = [
 
 // ── Fleet ────────────────────────────────────────────────────
 // Rates are sample figures — confirm with the client before launch.
-// Drop real photos into /public/fleet/<id>.jpg (e.g. /public/fleet/crysta.jpg).
+// Drop real photos into /public/fleet/<id>.webp (e.g. /public/fleet/crysta.webp).
 export type VehicleCategory = "Sedan" | "MUV" | "Van" | "Luxury";
 
 export interface Vehicle {

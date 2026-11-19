@@ -408,7 +408,7 @@ export function VehicleImage({ vehicle, className = "" }: { vehicle: Vehicle; cl
     <div className={`relative overflow-hidden bg-gradient-to-br ${lux ? "from-slate-900 via-slate-800 to-slate-700" : "from-brand via-brand-dark to-brand-deep"} ${className}`}>
       {!failed ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img ref={ref} src={`/fleet/${vehicle.id}.jpg`} alt={vehicle.name} loading="lazy" onError={() => setFailed(true)} className="absolute inset-0 size-full object-cover" />
+        <img ref={ref} src={`/fleet/${vehicle.id}.webp`} alt={vehicle.name} loading="lazy" onError={() => setFailed(true)} className="absolute inset-0 size-full object-cover" />
       ) : (
         <>
           <div className={`stripes absolute inset-0 ${lux ? "text-amber-200/10" : "text-white/10"}`} />
