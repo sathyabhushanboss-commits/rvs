@@ -98,16 +98,15 @@ export function SectionHeading({
 export function PageHero({ eyebrow, title, desc, children }: { eyebrow: string; title: ReactNode; desc: ReactNode; children?: ReactNode }) {
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">
-      <div className="stripes stripes-fade absolute inset-0 text-white/[0.06]" />
-      <div className="absolute -right-32 -top-32 size-[420px] rounded-full bg-accent/25 blur-3xl" />
-      <div className="absolute -bottom-40 -left-20 size-[380px] rounded-full bg-brand/60 blur-3xl" />
+      <div className="stripes absolute inset-y-0 right-0 hidden w-2/5 text-white/[0.07] md:block" />
+      <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-24">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-red-200"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-red-300"
         >
-          {eyebrow}
+          <span className="h-0.5 w-6 bg-current" /> {eyebrow}
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -141,7 +140,7 @@ export function Logo({ className = "h-10 md:h-12" }: { className?: string }) {
         </span>
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src="/logo.png" alt={COMPANY.name} width={1414} height={549} className={`${className} w-auto`} onError={() => setFailed(true)} />
+        <img src="/logo.webp" alt={COMPANY.name} width={800} height={305} decoding="async" className={`${className} w-auto`} onError={() => setFailed(true)} />
       )}
     </Link>
   );
@@ -367,29 +366,22 @@ export function FloatingContact() {
   const onBook = pathname.startsWith("/book");
   return (
     <div className={`fixed right-4 z-[1100] flex flex-col gap-3 ${onBook ? "bottom-28 lg:bottom-6" : "bottom-6"}`}>
-      <motion.a
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.6, type: "spring" }}
+      <a
         href={waLink("Hi RVS Tours, I'd like to book a cab.")}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="relative grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-green-900/25 transition hover:scale-105"
+        className="grid size-13 place-items-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/15 transition-transform hover:-translate-y-0.5"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-25" />
-        <WhatsAppIcon className="relative size-7" />
-      </motion.a>
-      <motion.a
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.75, type: "spring" }}
+        <WhatsAppIcon className="size-6" />
+      </a>
+      <a
         href={telLink}
         aria-label={`Call ${COMPANY.phoneDisplay}`}
-        className="grid size-14 place-items-center rounded-full bg-brand text-white shadow-xl shadow-brand/30 transition hover:scale-105"
+        className="grid size-13 place-items-center rounded-full bg-brand text-white shadow-lg shadow-black/15 transition-transform hover:-translate-y-0.5"
       >
-        <Phone className="size-6" />
-      </motion.a>
+        <Phone className="size-5" />
+      </a>
     </div>
   );
 }

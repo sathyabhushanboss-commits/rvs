@@ -38,8 +38,7 @@ export default function ServicesPage() {
               <div className={`relative flex flex-col justify-between p-8 md:p-10 ${i % 2 === 0 ? "bg-brand-deep text-white" : "bg-accent text-white"}`}>
                 <div className="stripes absolute inset-0 text-white/[0.06]" />
                 <div className="relative">
-                  <span className="text-sm font-bold text-white/50">0{i + 1}</span>
-                  <span className="mt-4 grid size-16 place-items-center rounded-2xl bg-white/10"><ServiceIcon name={s.icon} className="size-8" /></span>
+                  <ServiceIcon name={s.icon} className="size-9 text-white/90" />
                   <h2 className="mt-6 text-3xl font-extrabold">{s.title}</h2>
                 </div>
                 <p className="relative mt-6 text-white/75">{s.short}</p>
@@ -49,7 +48,7 @@ export default function ServicesPage() {
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {s.points.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 font-medium text-ink">
-                      <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-700"><Check className="size-3.5" strokeWidth={3} /></span>
+                      <Check className="mt-0.5 size-5 shrink-0 text-accent" strokeWidth={2.5} />
                       {p}
                     </li>
                   ))}

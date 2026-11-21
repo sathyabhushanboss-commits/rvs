@@ -676,7 +676,7 @@ export default function BookingFlow() {
         order_id: order.orderId,
         name: COMPANY.short,
         description: `${selected.v.name} · Booking ${order.bookingId}`,
-        image: "/logo.png",
+        image: "/icon-512.png",
         prefill: { name: payload.name, email: payload.email, contact: payload.phone },
         notes: { booking_id: order.bookingId },
         theme: { color: "#1d3a9c" },

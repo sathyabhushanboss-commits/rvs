@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BarChart3, CalendarClock, Car, ClipboardList, FileText, Headset, MapPinned, ShieldCheck, UserCheck, Users } from "lucide-react";
+import { BarChart3, CalendarClock, Car, FileText, Headset, MapPinned, ShieldCheck, UserCheck } from "lucide-react";
 import { EnquiryForm, PageHero, Reveal, SectionHeading } from "@/components/ui";
 import { COMPANY, mailLink, telLink } from "@/lib/data";
 
@@ -22,10 +22,10 @@ const FEATURES = [
 ];
 
 const PROCESS = [
-  { icon: ClipboardList, title: "Understand", text: "We study your locations, shifts and headcount." },
-  { icon: MapPinned, title: "Plan", text: "Routes, vehicle mix and a clear commercial proposal." },
-  { icon: Users, title: "Launch", text: "Driver briefings, pilot run and go-live with your teams." },
-  { icon: BarChart3, title: "Improve", text: "Monthly reviews to keep service sharp and costs efficient." },
+  { title: "Understand", text: "We study your locations, shifts and headcount." },
+  { title: "Plan", text: "Routes, vehicle mix and a clear commercial proposal." },
+  { title: "Launch", text: "Driver briefings, pilot run and go-live with your teams." },
+  { title: "Improve", text: "Monthly reviews to keep service sharp and costs efficient." },
 ];
 
 export default function CorporatePage() {
@@ -47,8 +47,8 @@ export default function CorporatePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={(i % 4) * 0.05}>
-              <div className="h-full rounded-3xl border border-slate-200 p-6 transition hover:border-brand/30 hover:shadow-lg">
-                <span className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand"><f.icon className="size-6" /></span>
+              <div className="h-full rounded-2xl border border-slate-200 p-6 transition hover:border-brand/40">
+                <f.icon className="size-7 text-brand" strokeWidth={1.75} />
                 <h3 className="mt-5 font-bold text-ink">{f.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{f.text}</p>
               </div>
@@ -63,12 +63,9 @@ export default function CorporatePage() {
           <div className="mt-12 grid gap-5 md:grid-cols-4">
             {PROCESS.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
-                <div className="h-full rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-                  <div className="flex items-center justify-between">
-                    <span className="grid size-12 place-items-center rounded-2xl bg-accent"><p.icon className="size-6" /></span>
-                    <span className="text-3xl font-extrabold text-white/15">0{i + 1}</span>
-                  </div>
-                  <h3 className="mt-5 text-lg font-bold">{p.title}</h3>
+                <div className="h-full border-t-2 border-white/20 pt-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-300">Step {i + 1}</p>
+                  <h3 className="mt-2 text-lg font-bold">{p.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-white/65">{p.text}</p>
                 </div>
               </Reveal>

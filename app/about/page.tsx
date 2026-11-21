@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, Eye, HeartHandshake, MapPinned, ShieldCheck, Sparkles, Target, Timer, Wrench } from "lucide-react";
+import { ArrowRight, Clock, Eye, HeartHandshake, MapPinned, ShieldCheck, Sofa, Target, Timer, Wrench } from "lucide-react";
 import { ContactCTA, PageHero, Reveal, SectionHeading } from "@/components/ui";
 import { COMPANY, VEHICLES } from "@/lib/data";
 
@@ -14,7 +14,7 @@ const VALUES = [
   { icon: Timer, title: "Punctuality", text: "We plan buffers into every trip so your driver is there before you are." },
   { icon: ShieldCheck, title: "Safety first", text: "Verified chauffeurs, maintained vehicles and night-travel safety protocols." },
   { icon: HeartHandshake, title: "Honest pricing", text: "Clear fares, no surprises — tolls and permits shown as actuals." },
-  { icon: Sparkles, title: "Comfort", text: "Clean, sanitised cabins and courteous service on every ride." },
+  { icon: Sofa, title: "Comfort", text: "Clean, sanitised cabins and courteous service on every ride." },
 ];
 
 const WHY = [
@@ -70,8 +70,8 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.06}>
-                <div className="h-full rounded-3xl bg-white p-7 ring-1 ring-slate-200">
-                  <span className="grid size-12 place-items-center rounded-2xl bg-brand-50 text-brand"><v.icon className="size-6" /></span>
+                <div className="h-full rounded-2xl bg-white p-7 ring-1 ring-slate-200">
+                  <v.icon className="size-7 text-accent" strokeWidth={1.75} />
                   <h3 className="mt-5 text-lg font-bold text-ink">{v.title}</h3>
                   <p className="mt-2 leading-7 text-slate-600">{v.text}</p>
                 </div>
@@ -86,8 +86,8 @@ export default function AboutPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {WHY.map((w, i) => (
             <Reveal key={w.title} delay={i * 0.06}>
-              <div className="flex gap-5 rounded-3xl border border-slate-200 p-7">
-                <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-accent text-white"><w.icon className="size-6" /></span>
+              <div className="flex gap-4 border-t-2 border-slate-200 py-6">
+                <w.icon className="mt-0.5 size-6 shrink-0 text-accent" strokeWidth={1.75} />
                 <div>
                   <h3 className="text-lg font-bold text-ink">{w.title}</h3>
                   <p className="mt-1.5 leading-7 text-slate-600">{w.text}</p>

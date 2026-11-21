@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     title: "RVS Tours and Travels — Premium Cabs & Corporate Transport, Bangalore",
     description: "Airport transfers, outstation trips, local packages, luxury cars and employee transportation. Book online in a minute.",
-    images: [{ url: "/logo.png", width: 1414, height: 549, alt: COMPANY.name }],
+    images: [{ url: "/logo.png", width: 1200, height: 466, alt: COMPANY.name }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
